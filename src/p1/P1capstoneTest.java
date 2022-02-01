@@ -18,21 +18,45 @@ class P1capstoneTest {
 		assertEquals(fileExtension, ".csv");
 	}
 	
+	
 	@Test 
 	void testCorrectChar() {
+		//get file name 
 		File file = P1capstone.getInput();
+		//parse file
 		ArrayList<String> array = new ArrayList<String>();
 		array = P1capstone.parseFile(file);
+		
 		int i;
-		String regex = "[0-9]+";
-		Pattern p = Pattern.compile(regex);
-		Matcher m;
+		String regex = "[0-9]+"; 	//regex for numbers
+		Pattern p = Pattern.compile(regex);	//pattern for numbers
+		Matcher m;						//matcher to check if numbers are in the string
+		boolean noNum = true;			//if there are numbers in the string
+		
 		for (i = 0; i < array.size(); i++) {
+			//check if string has number
 			m = p.matcher(array.get(i));
+			//if match fail the test
 			if (m.matches()) {
-				fail("Contains incorrect characters");
+				noNum = false;
+				assertTrue(noNum);
 			}
 		}
+		//if no match pass test
+		if (noNum) {
+			assertTrue(noNum);
+		}
 		
+	}
+	
+	@Test
+	public void throwsException() {
+	    try {
+	    	File file = P1capstone.getInput();
+	        P1capstone.parseFile(file);
+	        fail("Oops! Something went wrong.");
+	    } catch (Exception e) {
+	        assertEquals(e, "Oops! Something went wrong.");
+	    }
 	}
 }
