@@ -45,6 +45,7 @@ public class P1capstone {
 				array.add(splits[i]);
 			}
 		}
+		scanner.close();
 		return array;
 		}
 		 catch (FileNotFoundException e) { // catch any errors here
