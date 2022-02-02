@@ -10,3 +10,6 @@ jobs:
       - name: List files in the repository
         run: java src/p1/P1capstone.java
         
+      - name: Run tests on java file
+        run: java src/p1/ junit.jar; P1capstoneTest
+ 
