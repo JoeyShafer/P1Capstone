@@ -11,7 +11,7 @@ jobs:
         run: java src/p1/P1capstone.java
         
       - name: Import test package
-        uses: mikpenze/action-junit-report@v2
+        uses: ./gradlew build --info
 
       - name: Run tests on java file
         run: java src/p1/P1capstoneTest.java
