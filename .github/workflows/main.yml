@@ -11,5 +11,5 @@ jobs:
         run: java src/p1/P1capstone.java
         
       - name: Run tests on java file
-        run: java src/p1/P1capstoneTest.java junit.jarhamcrest-core.jar; P1capstoneTest
+        run: java src/p1/P1capstoneTest.java junit.jar;hamcrest-core.jar; P1capstoneTest
  
