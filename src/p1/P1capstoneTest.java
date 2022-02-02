@@ -8,6 +8,10 @@ import java.util.regex.*;
 import org.junit.jupiter.api.Test;
 
 class P1capstoneTest {
+    // Strings for testCsv testing
+    String correct = "src/english.csv"; // correct file
+    String wrong = "src/english.txt"; // for testCsv()
+    String correctWithNumbers = "src/englishWithNumbers.csv"; // for testCorrectChar()
 
 	
 	@Test 
@@ -49,14 +53,14 @@ class P1capstoneTest {
 		
 	}
 	
-	@Test
-	public void throwsException() {
-	    try {
-	    	File file = P1capstone.getInput();
-	        P1capstone.parseFile(file);
-	        fail("Oops! Something went wrong.");
-	    } catch (Exception e) {
-	        assertEquals(e, "Oops! Something went wrong.");
-	    }
-	}
+    @Test
+    public void throwsException() {
+            File file = new File(correct);
+            p1capstone.parseFile(file);
+
+            ArrayList<String> array = new ArrayList<String>();
+            array = p1capstone.parseFile(file);
+
+            assertEquals(26, array.size());
+    }
 }
